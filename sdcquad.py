@@ -188,10 +188,7 @@ def smat(nodes, mask):
       for k in ks:
         p = p * (x - nodes[k])
       p = p.as_poly()
-      print i
-      print p.coeffs()
       P = p.integrate(x)
-      print P.coeffs()
 
       # define integral(a, b) = \int_a^b p(x) dx
       integral = lambda a, b: P.subs(x, b).evalf(100) - P.subs(x, a).evalf(100)
